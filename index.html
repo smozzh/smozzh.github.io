@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="scss">
+          :root {
+            --width-bold: 4px;
+          }
+        .green {
+          color: #00ab4e;
+        }
+        div[class$='__size'],
+        div[class$='__size']:before,
+        div[class$='__size--bottom'],
+        div[class$='__size--bottom']:before,
+        div[class$='__size--bottom']:after,
+        div[class$='__size--left'],
+        div[class$='__size--left']:before,
+        div[class$='__size--left']:after,
+        div[class$='__size']:after,
+        div[class$='-size']:before,
+        div[class$='-size']:after,
+        div[class$='-size'] {
+          /*display: none;*/
+        }
+        .m-2 {
+          position: relative;
+          &:before {
+            content: '2';
+            position: absolute;
+            top: -1px;
+            right: -6px;
+            font-size: 10px;
+          }
+        }
+        .container-b {
+          min-height: 1000px;
+          width: 1400px;
+          margin: 50px auto;
+          position: relative;
+          & * {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          &__body--floor {
+            position: absolute;
+            right: 70px;
+            top: 0;
+            width: calc(217px * 2);
+            height: calc(179px * 2);
+            border: 0 solid black;
+            border-right-width: var(--width-bold);
+            border-top-width: var(--width-bold);
+            &__down__size {
+              position: absolute;
+              right: -3px;
+              bottom: -60px;
+              height: 60px;
+              width: calc(245px* 2 + 4px);
+              border: 0 solid gray;
+              border-right-width: 1px;
+              border-left-width: 1px;
+              &::after {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                line-height: 90px;
+                text-align: center;
+                content: '245см';
+                font-size: 12px;
+                height: 85%;
+                border: 0 solid gray;
+                border-bottom-width: 1px;
+              }
+            }
+            &__top__size {
+              position: absolute;
+              right: -3px;
+              top: -40px;
+              height: 40px;
+              width: calc(100% + 4px);
+              border: 0 solid gray;
+              border-right-width: 1px;
+              border-left-width: 1px;
+              &::after {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                line-height: 15px;
+                text-align: center;
+                content: '217см';
+                font-size: 12px;
+                height: 40%;
+                border: 0 solid gray;
+                border-bottom-width: 1px;
+              }
+            }
+            &__right__size {
+              position: absolute;
+              right: -60px;
+              top: -4px;
+              height: calc(179px * 2);
+              width: 60px;
+              border: 0 solid gray;
+              border-top-width: 1px;
+              border-bottom-width: 1px;
+              &::after {
+                height: 100%;
+                position: absolute;
+                top: 0;
+                line-height: 340px;
+                text-align: right;
+                content: '181см';
+                font-size: 12px;
+                left: 40%;
+                padding-left: 5px;
+                width: 40%;
+                border: 0 solid gray;
+                border-left-width: 1px;
+              }
+            }
+            &__down {
+              &__right {
+                position: absolute;
+                bottom: 0;
+                width: calc(87px * 2);
+                height: 1px;
+                right: 0;
+                border: 0 solid black;
+                border-bottom-width: var(--width-bold);
+                &__size {
+                  position: absolute;
+                  right: -2px;
+                  bottom: -40px;
+                  height: 40px;
+                  width: calc(87px* 2 + 1px);
+                  border: 0 solid gray;
+                  border-left-width: 1px;
+                  &::after {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    line-height: 50px;
+                    text-align: center;
+                    content: '87см';
+                    font-size: 12px;
+                    height: 45%;
+                    border: 0 solid gray;
+                    border-bottom-width: 1px;
+                  }
+                  &:before {
+                    width: calc(78px * 2);
+                    position: absolute;
+                    top: 0;
+                    left: calc(-78px * 2 - 1px);
+                    line-height: 50px;
+                    text-align: center;
+                    content: 'Дверь 78см';
+                    font-size: 12px;
+                    height: 80%;
+                    border: 0 solid gray;
+                    border-bottom-width: 1px;
+                  }
+                }
+              }
+              &__left {
+                position: absolute;
+                bottom: 0;
+                width: calc(80px * 2);
+                height: calc(69px * 2);
+                right: calc(165px * 2);
+                border: 0 solid black;
+                border-bottom-width: var(--width-bold);
+                border-left-width: var(--width-bold);
+                &__size {
+                  position: absolute;
+                  right: 0;
+                  bottom: -40px;
+                  height: 40px;
+                  width: calc(80px* 2 + 1px);
+                  border: 0 solid gray;
+                  border-right-width: 1px;
+                  &:after {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    line-height: 50px;
+                    text-align: center;
+                    content: '80см';
+                    font-size: 12px;
+                    height: 45%;
+                    border: 0 solid gray;
+                    border-bottom-width: 1px;
+                  }
+                  &--left {
+                    position: absolute;
+                    left: -60px;
+                    top: 0;
+                    height: calc(69px * 2);
+                    width: 60px;
+                    border: 0 solid gray;
+                    border-top-width: 1px;
+                    border-bottom-width: 1px;
+                    &:after {
+                      height: 100%;
+                      position: absolute;
+                      top: 0;
+                      line-height: 150px;
+                      text-align: right;
+                      content: '68-70см';
+                      font-size: 12px;
+                      right: 40%;
+                      padding-right: 15px;
+                      width: 100%;
+                      border: 0 solid gray;
+                      border-right-width: 1px;
+                    }
+                  }
+                }
+              }
+            }
+            &__middle__left {
+              position: absolute;
+              bottom: calc(69px* 2);
+              height: calc(110px* 2);
+              width: calc(27px* 2);
+              right: calc(245px* 2 - 28px* 2);
+              border: 0 solid black;
+              border-right-width: var(--width-bold);
+              border-bottom-width: var(--width-bold);
+              &__size {
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: calc(110px * 2);
+                width: 110px;
+                border: 0 solid gray;
+                border-top-width: 1px;
+                &:after {
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  line-height: 230px;
+                  text-align: right;
+                  content: '110см';
+                  font-size: 12px;
+                  right: 65%;
+                  padding-right: 5px;
+                  width: 40%;
+                  border: 0 solid gray;
+                  border-right-width: 1px;
+                }
+                &--bottom {
+                  position: absolute;
+                  right: 0;
+                  bottom: 0;
+                  height: 40px;
+                  width: 55px;
+                  border: 0 solid gray;
+                  border-left-width: 1px;
+                  &::after {
+                    height: 20px;
+                    position: absolute;
+                    bottom: 20px;
+                    /*line-height: 230px;*/
+                    text-align: center;
+                    content: '18см';
+                    font-size: 12px;
+                    right: 0;
+                    width: 100%;
+                    border: 0 solid gray;
+                    border-bottom-width: 1px;
+                  }
+                }
+              }
+            }
+          }
+          &__body--left {
+            position: absolute;
+            left: 70px;
+            top: 0;
+            width: calc(272px * 2);
+            height: calc(179px * 2);
+            border: var(--width-bold) solid black;
+            &__left {
+              width: 100%;
+              height: calc(69px* 2);
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              border-top: 3px solid black;
+            }
+            &__right {
+              width: 100%;
+              height: calc(51px * 2);
+              position: absolute;
+              top: 0;
+              right: 0;
+              border-bottom: 2px dashed black;
+              &__size {
+                position: absolute;
+                right: -60px;
+                top: -4px;
+                height: calc(51px * 2 + 3px);
+                width: 60px;
+                border: 0 solid gray;
+                border-top-width: 1px;
+                border-bottom-width: 1px;
+                &::after {
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  line-height: 110px;
+                  text-align: right;
+                  content: '51см';
+                  font-size: 12px;
+                  left: 40%;
+                  padding-left: 5px;
+                  width: 40%;
+                  border: 0 solid gray;
+                  border-left-width: 1px;
+                }
+              }
+            }
+            &__height-size {
+              position: absolute;
+              right: -3px;
+              bottom: -60px;
+              height: 60px;
+              width: calc(272px * 2 + 3px);
+              border: 0 solid gray;
+              border-right-width: 1px;
+              border-left-width: 1px;
+
+              &::after {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                line-height: 90px;
+                text-align: center;
+                content: '272см';
+                font-size: 12px;
+                height: 85%;
+                border: 0 solid gray;
+                border-bottom-width: 1px;
+              }
+            }
+            &__ventilation {
+              position: absolute;
+              width: calc(18px * 2);
+              height: calc(14px * 2);
+              border-radius: 5px;
+              border: 2px solid black;
+              left: calc(18px * 2);
+              bottom: calc(91px * 2);
+              &__top-size {
+                position: absolute;
+                left: calc(-18px * 2 - 3px);;
+                bottom: -217px;
+                height: 220px;
+                width: calc(18px * 2 + 2px);
+                border: 0 solid gray;
+                border-right-width: 1px;
+
+                &::after {
+                  width: 100%;
+                  position: absolute;
+                  top: 0;
+                  line-height: 410px;
+                  text-align: center;
+                  content: '18см';
+                  font-size: 12px;
+                  height: 90%;
+                  border: 0 solid gray;
+                  border-bottom-width: 1px;
+                }
+              }
+              &__left-size {
+                position: absolute;
+                left: -66px;
+                bottom: calc(-23px * 2 + 1px);
+                height: calc(23px * 2 - 4px);
+                width: 70px;
+                border: 0 solid gray;
+                border-top-width: 1px;
+                border-bottom-width: 1px;
+
+                &::after {
+                  width: 20%;
+                  position: absolute;
+                  left: -25px;
+                  line-height: 40px;
+                  padding-right: 25px;
+                  text-align: center;
+                  content: '22.5см';
+                  font-size: 12px;
+                  height: 100%;
+                  border: 0 solid gray;
+                  border-right-width: 1px;
+                }
+              }
+              &__right-size {
+                position: absolute;
+                left: -66px;
+                top: calc(-23px * 2 + 1px);
+                height: calc(23px * 2 - 4px);
+                width: 70px;
+                border: 0 solid gray;
+                border-top-width: 1px;
+                border-bottom-width: 1px;
+
+                &::after {
+                  width: 20%;
+                  position: absolute;
+                  left: -25px;
+                  line-height: 40px;
+                  padding-right: 25px;
+                  text-align: center;
+                  content: '22.5см';
+                  font-size: 12px;
+                  height: 100%;
+                  border: 0 solid gray;
+                  border-right-width: 1px;
+                }
+                &:before {
+                  content: '';
+                  position: absolute;
+                  bottom: 0;
+                  right: 0;
+                  background-color: white;
+                  height: 100%;
+                  width: 40px;
+                  border-top: 1px dashed black;
+                }
+              }
+            }
+            &__tech {
+              position: absolute;
+              width: calc(40px * 2);
+              height: calc(20px * 2);
+              border-radius: 5px;
+              border: 2px solid black;
+              left: calc(70px * 2);
+              top: calc(15px * 2);
+              &__top-size {
+                position: absolute;
+                left: calc(-71px* 2 - 3px);
+                top: -68px;
+                height: 71px;
+                width: calc(71px* 2 + 2px);
+                border: 0 solid gray;
+                border-right-width: 1px;
+                border-left-width: 1px;
+                &::after {
+                  width: 100%;
+                  position: absolute;
+                  top: 0;
+                  line-height: 18px;
+                  text-align: center;
+                  content: '70см';
+                  font-size: 12px;
+                  height: 25%;
+                  border: 0 solid gray;
+                  border-bottom-width: 1px;
+                }
+              }
+            }
+          }
+          &__body--description {
+            position: absolute;
+            flex-direction: column;
+            align-items: flex-start;
+            top: calc(179px * 2 + 80px);
+            left: 70px;
+            & >* {
+              max-width: 600px;
+            }
+          }
+          &__body--bottom {
+            position: absolute;
+            right: 70px;
+            bottom: 0;
+            width: calc(245px * 2);
+            height: calc(272px * 2);
+            border: var(--width-bold) solid black;
+            &__height-size {
+              position: absolute;
+              right: -60px;
+              top: -3px;
+              width: 60px;
+              height: calc(272px * 2 + 3px);
+              border: 0 solid gray;
+              border-top-width: 1px;
+              border-bottom-width: 1px;
+              &::after {
+                width: 5%;
+                position: absolute;
+                top: 0;
+                padding-left: 10px;
+                line-height: 490px;
+                text-align: center;
+                content: '272см';
+                font-size: 12px;
+                height: 100%;
+                border: 0 solid gray;
+                border-left-width: 1px;
+              }
+            }
+            &__door {
+              position: absolute;
+              top: -4px;
+              left: calc(80px * 2 - 4px);
+              background-color: white;
+              width: calc(78px * 2);
+              height: calc(209px * 2 + var(--width-bold));
+              border: var(--width-bold) solid black;
+              border-top-color: white;
+              &__height-size {
+                position: absolute;
+                left: calc(-80px * 2 - 60px);
+                top: -3px;
+                width: calc(80px * 2 + 60px);
+                height: calc(100% + 4px);
+                border: 0 solid gray;
+                border-top-width: 1px;
+                border-bottom-width: 1px;
+                &::after {
+                  width: 12%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  padding-right: 10px;
+                  line-height: 490px;
+                  text-align: center;
+                  content: '209см';
+                  font-size: 12px;
+                  height: 100%;
+                  border: 0 solid gray;
+                  border-right-width: 1px;
+                }
+              }
+            }
+          }
+        }
+    </style>
+</head>
+<body>
+<h1>Ванная</h1>
+<div class="container-b">
+    <div class="container-b__body--floor">
+        <div>пол ~ 4.0519 <span class="m-2">м</span></div>
+        <div class="container-b__body--floor__down__size"></div>
+        <div class="container-b__body--floor__right__size"></div>
+        <div class="container-b__body--floor__top__size"></div>
+        <div class="container-b__body--floor__down__right">
+            <div class="container-b__body--floor__down__right__size"></div>
+        </div>
+        <div class="container-b__body--floor__down__left">
+            <div class="container-b__body--floor__down__left__size"></div>
+            <div class="container-b__body--floor__down__left__size--left"></div>
+        </div>
+        <div class="container-b__body--floor__middle__left">
+            <div class="container-b__body--floor__middle__left__size"></div>
+            <div class="container-b__body--floor__middle__left__size--bottom"></div>
+        </div>
+    </div>
+    <div class="container-b__body--left">
+        <div style="flex-direction: column">
+            <div>левая стена ~4.086<span class="m-2">м</span></div>
+            <div>с учетом углубления ~4.4946<span class="m-2">м</span></div>
+        </div>
+        <div class="container-b__body--left__height-size"></div>
+        <div class="container-b__body--left__left"></div>
+        <div class="container-b__body--left__right">
+            <div class="container-b__body--left__right__size"></div>
+        </div>
+        <div class="container-b__body--left__ventilation">
+            <div class="green">*1</div>
+            <div class="container-b__body--left__ventilation__top-size"></div>
+            <div class="container-b__body--left__ventilation__left-size"></div>
+            <div class="container-b__body--left__ventilation__right-size"></div>
+        </div>
+        <div class="container-b__body--left__tech">
+            <div class="green">*2</div>
+            <div class="container-b__body--left__tech__top-size"></div>
+        </div>
+    </div>
+    <div class="container-b__body--bottom">
+        <div class="container-b__body--bottom__height-size"></div>
+        <div class="container-b__body--bottom__door">
+            <div class="container-b__body--bottom__door__height-size"></div>
+        </div>
+    </div>
+    <div class="container-b__body--description">
+        <div class="green"> *1 - Вентиляция </div>
+        <div class="green"> *2 - Технический люк (померяли только сколько примерно сверху надо будет, ширину его и выстоту не меряли) </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.9.12/sass.sync.min.js"></script>
+<script>
+  Sass.compile(document.querySelector("style[type=scss]").innerHTML,function(res){
+    var s=document.createElement("style");
+    s.innerHTML=res.text;
+    res.formatted&&console.error(res.formatted); //if error console.error it.
+    res.text&&document.head.appendChild(s);// append style element only if no error.
+  });
+</script>
+</body>
+</html>
